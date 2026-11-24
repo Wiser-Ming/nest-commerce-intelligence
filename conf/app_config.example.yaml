@@ -1,0 +1,49 @@
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "10 MB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+db_meta:
+  host: 127.0.0.1
+  port: 3307
+  user: shopkeeper
+  password: ${oc.env:MYSQL_APP_PASSWORD}
+  database: meta
+
+db_dw:
+  host: 127.0.0.1
+  port: 3307
+  user: shopkeeper
+  password: ${oc.env:MYSQL_APP_PASSWORD}
+  database: dw
+
+qdrant:
+  host: 127.0.0.1
+  port: 6333
+  embedding_size: 1024
+
+embedding:
+  host: 127.0.0.1
+  port: 8081
+  model: BAAI/bge-large-zh-v1.5
+  timeout: 60
+
+es:
+  host: 127.0.0.1
+  port: 9200
+  index_name: data_agent
+
+llm:
+  model_name: ${oc.env:LLM_MODEL,deepseek-flash}
+  api_key: ${oc.env:LLM_API_KEY}
+  base_url: ${oc.env:LLM_BASE_URL}
+
+intent_router:
+  model_path: laya_finetune/artifacts/shopkeeper-router-head
+  device: cpu

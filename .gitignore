@@ -1,0 +1,51 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local runtime configuration (commit the sanitized example instead)
+/conf/app_config.yaml
+
+# Python caches, environments, and generated build output
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Logs and generated evaluation/training data
+*.log
+/logs/
+/data/*report*.json
+/laya_finetune/data/
+/laya_finetune/artifacts/
+/laya_finetune/reference/
+
+# Local notes and archived material
+/问题.md
+/docs/16-*.md
+/docs/17-*.md
+/examples/qdrant_quickstart_demo.py
+/docker/elasticsearch/plugins/
+
+# Model weights and caches
+/.model-cache/
+/docker/embedding/bge-large-zh-v1.5/
+
+# Frontend dependencies and generated output
+/frontend/node_modules/
+/frontend/dist/
+*.tsbuildinfo
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
